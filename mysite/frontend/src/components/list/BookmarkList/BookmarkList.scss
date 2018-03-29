@@ -1,0 +1,26 @@
+
+@import 'utils';
+
+.bookmark-list {
+    .bookmark-item {
+        transition: all .15s ease-in;
+        padding: 1.5rem;
+
+        .site-name {
+            font-size: 2rem;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        .site-url {
+            margin-top: 0.5rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+
+        }
+    }
+
+    .bookmark-item + .bookmark-item {
+        border-top: 1px solid $oc-gray-3;
+    }
+}

@@ -15,12 +15,35 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from django.views.generic import TemplateView
+from rest_framework_jwt.views import obtain_jwt_token, verify_jwt_token
+
+
+# from bookmark import endpoints
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('^$', TemplateView.as_view(template_name='index.html')),
-    # path('',TemplateView.as_view(template_name='index.html')),
-    url(r'^.*$', TemplateView.as_view(template_name='index.html')),
+
+    # react routers
+    path('', TemplateView.as_view(template_name="index.html")),
+    path('post/', TemplateView.as_view(template_name="index.html")),
+    path('login/', TemplateView.as_view(template_name="index.html")),
+    path('signup/', TemplateView.as_view(template_name="index.html")),
+    path('editor/', TemplateView.as_view(template_name="index.html")),
+    path('bookmark/<int:pk>', TemplateView.as_view(template_name="index.html")),
+
+
+    # bookmark routers
+    path('api/bookmarks/', include('bookmark.urls')),
+
+    # create user routers
+    path('auth-api/', include('accounts.urls')),
+
+
+    # jwt routers
+    path('api-token-auth/', obtain_jwt_token),
+    path('api-token-verify/', verify_jwt_token),
+
+    # url(r'^.*$', TemplateView.as_view(template_name='index.html')),
 ]

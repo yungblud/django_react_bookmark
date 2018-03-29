@@ -1,0 +1,37 @@
+
+@import 'utils';
+
+.bookmark-info {
+
+    .info-contents {
+        display: flex;
+        flex-direction: column;
+        transition: all .15s ease-in;
+        padding-top: 1.5rem;
+        
+        // background: $oc-gray-3;
+        .site-name {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 500;
+
+        }
+
+        .site-url {
+            text-align: center;
+            margin-top: 0.5rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+
+            &:hover {
+                color: $oc-blue-3;
+            }
+        }
+
+        .buttons {
+            margin: 0 auto;
+            padding: 2rem;
+
+        }
+    }
+}

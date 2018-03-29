@@ -54,5 +54,7 @@ module.exports = {
   publicUrl: getPublicUrl(resolveApp('package.json')),
   servedPath: getServedPath(resolveApp('package.json')),
   statsRoot: resolveApp('../'),
-
+  globalStyles: resolveApp('src/styles'),
+  ssrJs: resolveApp('src/ssr.js'),
+  ssrBuild: resolveApp('../ssr'),
 };
